@@ -3,6 +3,7 @@ package rbac.heetyim.nareerat.myrbac.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.media.MediaBrowserServiceCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.ImageView;
 
 import rbac.heetyim.nareerat.myrbac.R;
 import rbac.heetyim.nareerat.myrbac.manager.MyAlert;
+import rbac.heetyim.nareerat.myrbac.manager.PostUserToServer;
 
 import static rbac.heetyim.nareerat.myrbac.manager.MyAlert.*;
 
@@ -64,10 +66,24 @@ public class SignUpFragment extends Fragment{
                 }else{
                     //No Space
                     Log.d("6AugV1", "No Space");
+                    uploadValue();
                 }
 
                 }
         });
+    }
+
+    private void uploadValue() {
+        try {
+            PostUserToServer postUserToServer = new PostUserToServer(getActivity());
+            postUserToServer.execute(nameString, userString, passwordString, "http://androidthai.in.th/rbac/addDatapair.php");
+            String strResult = postUserToServer.get();
+            Log.d("6AugV1","Result ==> + strResult");
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     private void backController() {
