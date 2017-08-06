@@ -28,6 +28,16 @@ public class SignUpFragment extends Fragment{
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         //back Controller
+        backController();
+    }
+
+    private void backController() {
         ImageView imageView = (ImageView) getView().findViewById(R.id.imvBack);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getActivity().getSupportFragmentManager().popBackStack();
+            }
+        });
     }
 } //main class
