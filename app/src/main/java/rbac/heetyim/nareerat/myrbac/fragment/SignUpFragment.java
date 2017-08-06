@@ -79,6 +79,12 @@ public class SignUpFragment extends Fragment{
             postUserToServer.execute(nameString, userString, passwordString, "http://androidthai.in.th/rbac/addDatapair.php");
             String strResult = postUserToServer.get();
             Log.d("6AugV1","Result ==> + strResult");
+            if (Boolean.parseBoolean(strResult)){
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.mainContainer, new MainFragment())
+                        .commit();
+            }
 
 
         }catch (Exception e){
