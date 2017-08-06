@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
 
     <android.support.v7.widget.Toolbar
@@ -12,33 +13,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <!--back-->
+            <!--Back-->
             <ImageView
                 android:id="@+id/imvBack"
                 android:src="@mipmap/ic_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <!--title-->
+            <!--Title-->
             <TextView
                 android:textColor="@color/textColorPrimary"
                 android:textStyle="bold"
                 android:layout_centerInParent="true"
-                android:text="Please Sign up"
+                android:text="Please Sign Up"
                 android:textSize="20sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <!--save-->
+            <!--Save-->
             <ImageView
                 android:id="@+id/imvSave"
                 android:src="@mipmap/ic_save"
                 android:layout_alignParentRight="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-
-
         </RelativeLayout>
+
     </android.support.v7.widget.Toolbar>
 
     <LinearLayout
@@ -58,17 +58,18 @@
                 android:src="@mipmap/ic_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
             <EditText
                 android:id="@+id/edtName"
                 android:inputType="text"
                 android:hint="Name :"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
+
         </LinearLayout>
 
         <!--User-->
         <LinearLayout
-
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -77,15 +78,17 @@
                 android:src="@mipmap/ic_user"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
             <EditText
-                android:id="@+id/editUser"
+                android:id="@+id/edtUser"
                 android:inputType="text"
                 android:hint="User :"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
+
         </LinearLayout>
 
-        <!--password-->
+        <!--Password-->
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -95,16 +98,16 @@
                 android:src="@mipmap/ic_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
             <EditText
-                android:id="@+id/editPassword"
+                android:id="@+id/edtPassword"
                 android:inputType="text"
                 android:hint="Password :"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
+
         </LinearLayout>
 
 
     </LinearLayout>
-
-
 </RelativeLayout>
