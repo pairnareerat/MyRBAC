@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import rbac.heetyim.nareerat.myrbac.R;
@@ -14,6 +15,7 @@ import rbac.heetyim.nareerat.myrbac.R;
  * Created by Administrator on 6/8/2560.
  */
 public class SignUpFragment extends Fragment{
+    private String nameString, userString, passwordString;
 
     @Nullable
     @Override
@@ -29,6 +31,28 @@ public class SignUpFragment extends Fragment{
         super.onActivityCreated(savedInstanceState);
         //back Controller
         backController();
+        //save Controller
+        saveController();
+
+    }
+
+    private void saveController() {
+        ImageView imageView = (ImageView) getView().findViewById(R.id.imvSave);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //get value from Edit
+                EditText nameEditText = (EditText) getView().findViewById(R.id.edtName);
+                EditText userEditText = (EditText) getView().findViewById(R.id.edtUser);
+                EditText passwordEditText = (EditText) getView().findViewById(R.id.edtPassword);
+
+                nameString = nameEditText.getText().toString().trim();
+                userString = userEditText.getText().toString().trim();
+                passwordString = passwordEditText.getText().toString().trim();
+
+
+            }
+        });
     }
 
     private void backController() {
